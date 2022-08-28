@@ -17,6 +17,7 @@ class TestEnglishToFrench(unittest.TestCase):
     def test_translation_result(self):
         '''Test result for good input'''
         self.assertEqual(english_to_french('Hello')['translations'][0]['translation'],'Bonjour')
+        self.assertNotEqual(english_to_french('Hello')['translations'][0]['translation'],'Ola')
 
 class TestFrenchToEnglish(unittest.TestCase):
     '''Test Cases for French to English function'''
@@ -33,6 +34,7 @@ class TestFrenchToEnglish(unittest.TestCase):
     def test_translation_result(self):
         '''Test result for good input'''
         self.assertEqual(french_to_english('Bonjour')['translations'][0]['translation'],'Hello')
+        self.assertNotEqual(french_to_english('Bonjour')['translations'][0]['translation'],'Ola')
 
 if __name__ == '__main__':
     unittest.main()
